@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery—Test1day</title>、
+		<script src="https://code.jquery.com/jquery-1.12.4.js"
+		integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+		crossorigin="anonymous"></script>
+
+		<script type="text/javascript">
+			/*
+			window.onload=function(){
+				//1、通过原生js的入口函数可以拿到DOM元素
+				var img=document.getElementsByTagName("img")[0];
+				console.log(img);
+				//2.通过原生的JS入口函数可以拿到DOM元素的宽高
+				var width=window.getComputedStyle(img).width;
+				console.log("onload",width);
+			}
+			*/
+			/*
+			*原生JS和JQuery入口函数的加载模式不同
+			* 原生JS会等DOM元素加载完毕，并且图片也加载完毕才会执行
+			* JQuery会等到DOM元素加载完毕，但不会等到图片也加载完毕就会执行
+			* */
+			/*
+			$(document).ready(function(){
+				//通过JQuery的入口函数可以拿到DOM元素
+				var $img=$("img")[0];
+				console.log($img);
+				//2.通过JQuery的入口函数不可以拿到DOM元素的宽高
+				var $width=$img.width();
+				console.log("ready",$width);
+			});*/
+			/*
+			原生的JS如果编写了多个入口函数，后面编写的会覆盖前面编写的
+			*/
+			/* window.onload=function(ev){
+				alert("hello INj1");
+				
+			}
+			window.onload=function(ev){
+				alert("hello INj2");
+			} */
+			$(document).ready(function(){
+				alert("hello INj1");
+			});
+			$(document).ready(function(){
+				alert("hello INj2");
+			});
+		</script>
+	</head>
+	<body>
+		<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_86d58ae1.png" alt=""/>
+	</body>
+</html>
