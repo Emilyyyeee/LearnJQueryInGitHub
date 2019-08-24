@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"
+		integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+		crossorigin="anonymous">
+		</script>
+		<script>
+		$(function () {
+		/* 
+		 1.prop方法
+		 特点和attr一致
+		 2.removeprop方法
+		 特点和removeAttr一致
+		 */
+			/* $("span").eq(0).prop("demo","it666");
+			$("span").eq(1).prop("demo","lnj");
+		    console.log($("span").prop("demo"));
+		    $("span").removeProp("demo"); */
+			
+			/* 
+			 注意点：prop方法不仅能够操作属性，他还能操作熟悉节点
+			 因为attribute也是个几把属性；
+			 官方推荐在操作属性节点时,具有 true 和 false 两个属性的属性节点返回值不同，
+			 如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()
+			 */
+			/* console.log($("span").prop("class"));
+			$("span").prop("class","box");//企业中到底应该用谁 */
+			
+			
+			console.log($("input").prop("checked"));//true / false
+				console.log($("input").attr("checked"));//checked / undefined
+		});
+		</script>
+	</head>
+	<body>
+			<span class="span1" name="it666"></span>
+			<span class="span2" name="lnj"></span>
+			<input type="checkbox" >
+	</body>
+</html>
