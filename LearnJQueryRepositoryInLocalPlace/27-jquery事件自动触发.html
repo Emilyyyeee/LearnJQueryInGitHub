@@ -52,6 +52,11 @@
 				
 			});
 			$("input[type='submit']").triggerHandler("click");
+			$("span").click(function(){
+				alert("a");
+			});
+			// $("a").triggerHandler("click");
+			$("span").trigger("click");
 		});
 		</script>
 	</head>
@@ -62,7 +67,7 @@
 			
 	    </div>
 	</div>
-	<a href="http://www.baidu.com">我是百度</a>
+	<a href="http://www.baidu.com"><span>注册</span></a>
 	<form action="http://www.taobao.com">
 		<input type="text">
 		<input type="submit">//提交按钮默认会连接远程服务器
